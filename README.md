@@ -45,3 +45,14 @@ The code for connecting the internet
 
        }
 ```
+
+Code for data asynchronously
+```
+        Stream.of(words)
+                .map(s -> s.concat(" "))
+                .map(Text::new)
+                .peek(text -> text.setFill(Color.WHITESMOKE))
+                .peek(text -> text.setStyle(" -fx-font-size: 20pt"))
+                .peek(text -> text.setOnMousePressed(event -> expand(text, textFlowPane)))
+                .forEach(textFlowPane.getChildren()::add);
+```
